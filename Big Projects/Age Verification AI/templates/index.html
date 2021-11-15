@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+	<link rel="stylesheet" href="main.css">
+
+    <title>L.L.A.V.</title>
+  </head>
+  <body>
+	
+		<h1 class="heading">
+				L. L. A. V.
+				<ul class="explain">
+					<li>Legal</li>
+					<li>Limit</li>
+					<li>Age</li> 
+					<li>Verifier</li>
+				</ul>
+		</h1>
+		<header>
+			<nav class="top">
+				<ul>
+					<li class="tabs"><a href="/index">HOME</a></li>
+					<li class="tabs"><a href="/login">ARCHIVE</a></li>
+					<li class="tabs"><a href="/charts">CHARTS</a></li>
+					<li class="tabs"><a href="/about">ABOUT</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section class="upload">
+			<div class="row">
+				<div class="col">
+					<h4>Upload new File</h4>
+					<form action="/" method=post enctype="multipart/form-data">
+						<input type="file" name="file" />
+						<input type="submit" value="Upload" />
+					</form>
+				</div> 
+			</div>
+			{% for message in get_flashed_messages() %}    
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				{{ message }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			{% endfor %}
+			<div class="row">
+			{% if results is defined %}
+				{% for i in range(len-1,-1,-1) %}
+				
+					{{ results[i]|safe }}
+			   
+				{% endfor %}
+			{% endif %}
+			</div>
+		</section>
+		
+		<footer>
+			Lead Brick Liquor Inc. is the sole owner of L.L.A.V (Legal Limit Age Verifier). Any use or distribution of this software outside of Lead Brick Liquor Inc. will be met with swift legal action. 
+		</footer>
+  </body>
+</html>

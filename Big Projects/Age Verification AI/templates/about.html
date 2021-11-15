@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>About</title>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+		<link rel="stylesheet" href="main.css">
+	</head>
+	
+	<body>
+		<h1 class="heading">
+				L. L. A. V.
+				<ul class="explain">
+					<li>Legal</li>
+					<li>Limit</li>
+					<li>Age</li> 
+					<li>Verifier</li>
+				</ul>
+		</h1>
+		<header>
+			<nav class="top">
+				<ul>
+					<li class="tabs"><a href="/index">HOME</a></li>
+					<li class="tabs"><a href="/login">ARCHIVE</a></li>
+					<li class="tabs"><a href="/charts">CHARTS</a></li>
+					<li class="tabs"><a href="/about">ABOUT</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section class="aboutsection">
+		
+			<h1 class="aboutheading"> About the AI </h1>
+			
+			<p class="abouttext">With L.L.A.V., our new state of the Art AI, we are able to determine whether or not a customer is under the legal drinking age of 21. This helps us ensure that the we are within the guidlines of the law and are able to keep our liquor stores and communities safe.</p>
+			
+			<h1 class="aboutheading">How it is done</h1>
+			
+			<p class="abouttext">L.L.A.V. takes an image of a subject and is trained to transform and morph the image in order to get a higher understanding of it</p>
+			
+			<section class="aboutimages">
+				<div id="topimage">
+					<img src="{{ url_for('static', filename= 'aboutimg/top.jpg') }}"/>
+					<p class="imgdsc">Original</p>
+				</div>
+				</br>
+				<div id="bottomimgs">
+					<img src="{{ url_for('static', filename= 'aboutimg/bottom1.jpeg') }}"/>
+					<p class="imgdsc">Morph 1</p>
+				</div>
+				<div id="bottomimgs">
+					<img src="{{ url_for('static', filename= 'aboutimg/bottom2.jpeg') }}"/>
+					<p class="imgdsc">Morph 2</p>
+				</div>
+				<div id="bottomimgs">
+					<img src="{{ url_for('static', filename= 'aboutimg/bottom3.jpeg') }}"/>
+					<p class="imgdsc">Morph 3</p>
+				</div>
+			</section>
+			
+			<p class="abouttext">As you can see from the images above. L.L.A.V. takes the images and slightly skews or shifts the images. This is done in both training and testing of L.L.A.V. so that we can ensure that we get the most out of a single image.</p>
+			
+		</section>
+		<footer>
+			Lead Brick Liquor Inc. is the sole owner of L.L.A.V (Legal Limit Age Verifier). Any use or distribution of this software outside of Lead Brick Liquor Inc. will be met with swift legal action. 
+		</footer>
+	<body>
+<html>

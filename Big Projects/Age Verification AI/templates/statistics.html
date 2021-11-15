@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+		<link rel="stylesheet" href="main.css">
+		
+	</head>
+	
+	<body>
+		<script>
+			function checkLogin() {
+			
+			  let username = document.getElementById("username").value;
+			  let password = document.getElementById("password").value;
+			  
+			  let text = "";
+			  if (username == "user" && password == "password") {
+				window.location.href = "/archive";
+			  } else {
+				text = "Invalid Username or Password";
+			  }
+			  document.getElementById("demo").innerHTML = text;
+			}
+		</script>
+		<h1 class="heading">
+				L. L. A. V.
+				<ul class="explain">
+					<li>Legal</li>
+					<li>Limit</li>
+					<li>Age</li> 
+					<li>Verifier</li>
+				</ul>
+		</h1>
+		<header>
+			<nav class="top">
+				<ul>
+					<li class="tabs"><a href="/index">HOME</a></li>
+					<li class="tabs"><a href="/login">ARCHIVE</a></li>
+					<li class="tabs"><a href="/charts">CHARTS</a></li>
+					<li class="tabs"><a href="/about">ABOUT</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section class="login">
+			<div class="username">
+				<div class="alignleft">
+					<label for="uname"><b>Username</b></label>
+				</div>
+				<div class="alignright">
+					<input type="text" placeholder="Enter Username" name="uname" id="username" required>
+				</div>
+			</div>
+			
+			<div class="password">
+				<div class="alignleft">
+					<label for="psw"><b>Password</b></label>
+				</div>
+				<div class="alignright">
+					<input type="password" placeholder="Enter Password" name="psw" id="password" required>
+				</div>
+			</div>
+			
+			<div class="submit">
+				<button type="button" onclick="checkLogin()">Login</button>
+			</div>
+			
+			<p id="demo"></p>
+		</section>
+		
+		<footer>
+			Lead Brick Liquor Inc. is the sole owner of L.L.A.V (Legal Limit Age Verifier). Any use or distribution of this software outside of Lead Brick Liquor Inc. will be met with swift legal action. 
+		</footer>
+	<body>
+<html>

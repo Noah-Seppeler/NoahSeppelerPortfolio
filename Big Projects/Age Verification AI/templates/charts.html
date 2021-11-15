@@ -1,0 +1,109 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Archive</title>
+		
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css') }}">
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+		  google.charts.load('current', {'packages':['corechart']});
+		  google.charts.setOnLoadCallback(drawChart);
+
+		  function drawChart() {
+
+			var data = google.visualization.arrayToDataTable([
+			  ['Age Range', 'Amount Identified'],
+			  ['Under',     {{ undernumber | safe }}],
+			  ['Over',      {{ overnumber | safe }}]
+			]);
+
+			var options = {
+			  title: 'Customers Served',
+			  backgroundColor: '#3972d0',
+			  colors: ['#4c39d0', '#7139d0']
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+			chart.draw(data, options);
+		  }
+		</script>
+		
+		<script type="text/javascript">
+		google.charts.load("current", {packages:["corechart"]});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+
+		  var data = google.visualization.arrayToDataTable([
+			['Under or Over', 'Under', 'Over'],
+			['00:00', {{ undertime[0] | safe }}, {{ overtime[0] | safe }}],
+			['01:00', {{ undertime[1] | safe }}, {{ overtime[1] | safe }}],
+			['02:00', {{ undertime[2] | safe }}, {{ overtime[2] | safe }}],
+			['03:00', {{ undertime[3] | safe }}, {{ overtime[3] | safe }}],
+			['04:00', {{ undertime[4] | safe }}, {{ overtime[4] | safe }}],
+			['05:00', {{ undertime[5] | safe }}, {{ overtime[5] | safe }}],
+			['06:00', {{ undertime[6] | safe }}, {{ overtime[6] | safe }}],
+			['07:00', {{ undertime[7] | safe }}, {{ overtime[7] | safe }}],
+			['08:00', {{ undertime[8] | safe }}, {{ overtime[8] | safe }}],
+			['09:00', {{ undertime[9] | safe }}, {{ overtime[9] | safe }}],
+			['10:00', {{ undertime[10] | safe }}, {{ overtime[10] | safe }}],
+			['11:00', {{ undertime[11] | safe }}, {{ overtime[11] | safe }}],
+			['12:00', {{ undertime[12] | safe }}, {{ overtime[12] | safe }}],
+			['13:00', {{ undertime[13] | safe }}, {{ overtime[13] | safe }}],
+			['14:00', {{ undertime[14] | safe }}, {{ overtime[14] | safe }}],
+			['15:00', {{ undertime[15] | safe }}, {{ overtime[15] | safe }}],
+			['16:00', {{ undertime[16] | safe }}, {{ overtime[16] | safe }}],
+			['17:00', {{ undertime[17] | safe }}, {{ overtime[17] | safe }}],
+			['18:00', {{ undertime[18] | safe }}, {{ overtime[18] | safe }}],
+			['19:00', {{ undertime[19] | safe }}, {{ overtime[19] | safe }}],
+			['20:00', {{ undertime[20] | safe }}, {{ overtime[20] | safe }}],
+			['21:00', {{ undertime[21] | safe }}, {{ overtime[21] | safe }}],
+			['22:00', {{ undertime[22] | safe }}, {{ overtime[22] | safe }}],
+			['23:00', {{ undertime[23] | safe }}, {{ overtime[23] | safe }}]
+		  ]);
+
+		  var options = {
+			legend: { position: 'top', maxLines: 3 },
+			bar: { groupWidth: '75%' },
+			backgroundColor: '#3972d0',
+			colors: ['#4c39d0', '#7139d0'],
+			isStacked: true
+		  };
+		  var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+		  chart.draw(data, options);
+	  }
+	  </script>
+
+	</head>
+	
+	<body>
+		<h1 class="heading">
+				L. L. A. V.
+				<ul class="explain">
+					<li>Legal</li>
+					<li>Limit</li>
+					<li>Age</li> 
+					<li>Verifier</li>
+				</ul>
+		</h1>
+		<header>
+			<nav class="top">
+				<ul>
+					<li class="tabs"><a href="/index">HOME</a></li>
+					<li class="tabs"><a href="/login">ARCHIVE</a></li>
+					<li class="tabs"><a href="/charts">CHARTS</a></li>
+					<li class="tabs"><a href="/about">ABOUT</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div id="piechart" style="width: 80%; height: 500px; margin: auto; margin-top: 150px; margin-bottom: 100px;"></div>
+		
+		<div id="barchart_values" style="width: 80%; height: 1000px; margin: auto; margin-top: 0px; margin-bottom: 100px;"></div>
+		
+		<footer>
+			Lead Brick Liquor Inc. is the sole owner of L.L.A.V (Legal Limit Age Verifier). Any use or distribution of this software outside of Lead Brick Liquor Inc. will be met with swift legal action. 
+		</footer>
+	<body>
+<html>
